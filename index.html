@@ -112,6 +112,23 @@
             width: 80%;
             height: auto; 
         }
+        .explainer-text {
+    font-size: 14px; /* Imposta una dimensione di carattere piccola */
+    color: #666; /* Colore di testo più tenue (grigio scuro) */
+    line-height: 1.6; /* Distanza tra le righe per migliorarne la leggibilità */
+    margin-top: 10px; /* Spazio sopra al paragrafo */
+    margin-bottom: 20px; /* Spazio sotto al paragrafo */
+    font-style: italic; /* Imposta il testo in corsivo */
+}
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}
+
+.footer p {
+    margin: 0;
+}
     </style>
 </head>
 <body>
@@ -135,8 +152,8 @@
 
             <!-- Select che appare solo se si sceglie "Ingresso Gratuito Hangover Party" -->
             <div id="extraFields">
-                <label for="opzione">Seleziona una provincia di Residenza Valida:</label>
                 <select name="opzione" id="opzione" required>
+                    <option value="" disabled selected>Seleziona una provincia di Residenza Valida</option> <!-- Opzione vuota di default -->
                     <option value="Pesaro">Pesaro</option>
                     <option value="Urbino">Urbino</option>
                     <option value="Rimini">Rimini</option>
@@ -144,10 +161,14 @@
                     <option value="Forli">Forlì</option>
                     <option value="Cesena">Cesena</option>
                 </select>
+                <p class="explainer-text">Attenzione! i dati inseriti (se necessario) saranno verificati all'ingresso per evitare disguidi.</p>
             </div>
 
             <button type="submit">Invia</button>
         </form>
+        <div class="footer">
+            <p>&copy; 2025 Hangover Party. All Rights Reserved.</p>
+        </div>
     </div>
     <div id="successMessage" class="overlay">
         <div class="message-box">
