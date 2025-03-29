@@ -181,15 +181,19 @@
     <script>
     
         document.querySelectorAll('input[name="scelta"]').forEach((radio) => {
-        radio.addEventListener("change", function () {
-            let extraFields = document.getElementById("extraFields");
-                if (this.value === "Ingresso Gratuito Hangover Party") { // Controlla se l'opzione selezionata è "Ingresso Gratuito Hangover Party"
-                    extraFields.style.display = "block";
-                } else {
-                    extraFields.style.display = "none";
-                }
-            });
-        });
+    radio.addEventListener("change", function () {
+        let extraFields = document.getElementById("extraFields");
+        let selectOpzione = document.getElementById("opzione");
+
+        if (this.value === "Ingresso Gratuito Hangover Party") {
+            extraFields.style.display = "block";
+            selectOpzione.setAttribute("required", "required"); // Rendi la select obbligatoria
+        } else {
+            extraFields.style.display = "none";
+            selectOpzione.removeAttribute("required"); // Rimuovi l'obbligo quando scegli "Brunch"
+        }
+    });
+});
 
         function closeOverlay() {
             document.getElementById("successMessage").style.display = "none";
